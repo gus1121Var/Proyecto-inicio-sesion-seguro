@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Estilos_Registro.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Registro</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+
+        /*window.onload = function() {
+            document.getElementById('formularioRegistro').reset();
+        };*/
+
+        function validarPassword(password) {
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$/;
+            return regex.test(password);
+        }
+
+        function comprobarClave() {
+            const clave1 = document.getElementById("Contraseña").value;
+            const clave2 = document.getElementById("Contraseña2").value;
+            const mensajeError = document.getElementById("mensajeError");
+
+            if (clave1 !== clave2) {
+                mensajeError.textContent = "Las dos claves son distintas... Ingresa una nueva contraseña";
+            } else if (!validarPassword(clave1)) {
+                mensajeError.textContent = "El password debe contener al menos una minúscula, una mayúscula, un número y un carácter especial, y tener al menos 8 caracteres.";
+            } else {
+                mensajeError.textContent = "";
+            }
+        }
+
+        function validarCorreo(correo) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(correo);
+        }
+
+        function comprobarCorreo() {
+            const correo = document.getElementById("Correo").value;
+            const mensajeError = document.getElementById("mensajeError");
+
+            if (!validarCorreo(correo)) {
+                mensajeError.textContent = "Por favor, introduce una dirección de correo electrónico válida.";
+            } else {
+                mensajeError.textContent = "";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("Contraseña").addEventListener("input", comprobarClave);
+            document.getElementById("Contraseña2").addEventListener("input", comprobarClave);
+            document.getElementById("Correo").addEventListener("input", comprobarCorreo);
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="form-horizontal" method="POST" action="Guardar_usuario.php" autocomplete="off" name="f1">
+            <h1>Registro de cuenta</h1>
+            <div class="input-box">
+                <input type="text" id="Nombre" name="Nombre" placeholder="Nombre completo" required>
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="Correo" name="Correo" placeholder="Correo electrónico" required>
+                <i class='bx bx-at'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="Contraseña" name="Contraseña" placeholder="Contraseña" required>
+                <i class='bx bx-key'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="Contraseña2" name="Contraseña2" placeholder="Repetir contraseña" required>
+                <i class='bx bx-key'></i>
+            </div>
+            <div class="mb-3">
+                <div class="g-recaptcha" data-sitekey="6LfkBe0pAAAAAILMPc1Me0w--PJL0cYsVX5Rdmkg"></div>
+            </div>
+            <div id="mensajeError" class="error"></div>
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+            <button type="submit" class="btn-primary">Registrar</button>
+            <div class="register-link">
+                <p>Se usará el correo para iniciar sesión</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

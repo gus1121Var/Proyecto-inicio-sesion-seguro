@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tienda</title>
+		<link rel="stylesheet" href="Estilo_tienda.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Tienda de aparatos electrónicos</h1>
+
+			<div class="container-icon">
+				<div class="container-cart-icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="icon-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
+					<div class="count-products">
+						<span id="contador-productos">0</span>
+					</div>
+				</div>
+
+				<div class="container-cart-products hidden-cart">
+					<div class="row-product hidden">
+						<div class="cart-product">
+							<div class="info-cart-product">
+								<span class="cantidad-producto-carrito"></span>
+								<p class="titulo-producto-carrito"></p>
+								<span class="precio-producto-carrito"></span>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="icon-close"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<div class="cart-total hidden">
+						<h3>Total:</h3>
+						<span class="total-pagar"></span>
+					</div>
+					<p class="cart-empty"></p>
+				</div>
+			</div>
+		</header>
+		<div class="container-items">
+			<div class="item">
+				<figure>
+					<img
+						src="imagen/imagenes/AUDIFONOS/61AoLdMVP-L._AC_SL1500_.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Audifonos diadema morado</h2>
+					<p class="price">$599</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="imagen/imagenes/AUDIFONOS/61RJ6gJJkLL._AC_SL1000_.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Audifonos diadema rosa</h2>
+					<p class="price">$799</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="imagen/imagenes/AUDIFONOS/61ZDwijKtxL._AC_SL1500_.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Audifonos JBL negro</h2>
+					<p class="price">$999</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="imagen/imagenes/AUDIFONOS/71+KbNZu0-L._AC_SL1500_.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Audifonos Motorola Blancos</h2>
+					<p class="price">$899</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+						src="imagen/imagenes/CELULARES/41RpmPYWXLL._AC_SL1000_.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>IPhone rosa </h2>
+					<p class="price">$6799</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/CELULARES/71r0E8xfKcL._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>IPhone verde claro </h2>
+					<p class="price">$8999</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/CELULARES/510WkOj8FLL._AC_SL1000_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>IPhone morado claro </h2>
+					<p class="price">$7799</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/CELULARES/611mRs-imxL._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>IPhone rojo </h2>
+					<p class="price">$9999</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/LAPTOPS/61N86CFXTGL._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Laptop hp gris metalico </h2>
+					<p class="price">$7689</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/LAPTOPS/71BacbJQ4FL._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Laptop hp rosa metalico </h2>
+					<p class="price">$9399</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/LAPTOPS/71PB7ndlF3L._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Laptop ADCWEI azul </h2>
+					<p class="price">$5699</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/LAPTOPS/619GPV2na5L._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Laptop ThinkPad rosa metalico</h2>
+					<p class="price">$7299</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/RELOJ/61jPAT1EThL._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Reloj inteligente negro</h2>
+					<p class="price">$3299</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/RELOJ/81DMvyVZ32L._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Reloj inteligente dorado con correa</h2>
+					<p class="price">$5199</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/RELOJ/615NViPZX3L._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Reloj inteligente rosa palo</h2>
+					<p class="price">$3699</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/RELOJ/617scd0g+iL._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Reloj inteligente morado claro</h2>
+					<p class="price">$4699</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/TABLETS/51N9YZA0AmL._AC_SL1280_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Tablet DOLBY ALMOS negro</h2>
+					<p class="price">$7544</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/TABLETS/51NDgyJMC8L._AC_SL1280_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Tablet LENOVO gris metalico</h2>
+					<p class="price">$4199</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/TABLETS/61qS8WUSEHL._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Tablet rosa claro con franja blanca</h2>
+					<p class="price">$5169</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				 
+				 
+			<div class="item">
+				<figure>
+					<img
+										src="imagen/imagenes/TABLETS/71MQpzwXe9L._AC_SL1500_.jpg"
+										alt="producto"
+									/>
+				</figure>
+				<div class="info-product">
+					<h2>Tablet rosa metalico con franja blanca</h2>
+					<p class="price">$6199</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="tienda.js"></script>
+	</body>
+</html>

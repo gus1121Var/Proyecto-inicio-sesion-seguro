@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Estilos_Registro.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Registro</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+
+        /*window.onload = function() {
+            document.getElementById('formularioRegistro').reset();
+        };*/
+
+        function validarCorreo(correo) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(correo);
+        }
+
+        function comprobarCorreo() {
+            const correo = document.getElementById("Correo").value;
+            const mensajeError = document.getElementById("mensajeError");
+
+            if (!validarCorreo(correo)) {
+                mensajeError.textContent = "Por favor, introduce una dirección de correo electrónico válida.";
+            } else {
+                mensajeError.textContent = "";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("Correo").addEventListener("input", comprobarCorreo);
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="form-horizontal" method="POST" action="Recuperar.php" autocomplete="off" name="f1">
+            <h1>Recuperar cuenta</h1>
+            <div class="input-box">
+                <input type="text" id="Correo" name="Correo" placeholder="Correo electrónico" required>
+                <i class='bx bx-at'></i>
+            </div>
+            <div class="mb-3">
+                <div class="g-recaptcha" data-sitekey="6LfkBe0pAAAAAILMPc1Me0w--PJL0cYsVX5Rdmkg"></div>
+            </div>
+            <div id="mensajeError" class="error"></div>
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+            <button type="submit" class="btn-primary">Verificar</button>
+            <div class="register-link">
+                <p>Revisa que tu correo este registrado</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
